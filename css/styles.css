@@ -1,0 +1,250 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7em;
+}
+
+.header {
+  color: #fff;
+  height: 100vh;
+  position: relative;
+}
+
+.header::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block; /*Must be present and the same as its parent*/
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url("../imgs/hero_2.jpg");
+
+  z-index: -2;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+.navbar {
+  padding: 30px 30px;
+}
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+.navbar-header {
+  display: inline-block;
+}
+.navbar-header-text {
+  color: #fff;
+  font-size: 200%;
+  font-weight: 400;
+}
+.navbar-header-dot {
+  color: #007bff;
+  font-size: 200%;
+}
+
+.navigation {
+  list-style-type: none;
+
+  float: right;
+}
+.navigation li {
+  display: inline-block;
+  padding: 10px;
+}
+
+.navigation a:link,
+.navigation a:visited {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 150%;
+}
+.navigation a:hover,
+.navigation a:active {
+  color: #fff;
+}
+.navigation li .active {
+  color: #fff;
+}
+.jumbotron {
+  border-top: 1px solid rgb(120, 120, 120);
+  position: relative;
+  height: inherit;
+}
+.header-box {
+  position: absolute;
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  text-align: center;
+}
+
+.header-box-main {
+  text-transform: uppercase;
+  font-size: 600%;
+  line-height: 120%;
+}
+.header-box-main span {
+  display: block;
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+}
+
+.header-box-text {
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1.5;
+  margin-top: 0.7em;
+  animation-name: moveInRight;
+  animation-duration: 1s;
+}
+
+.btn:link,
+.btn:visited {
+  padding: 10px 30px;
+  border-radius: 100px;
+  text-transform: capitalize;
+  font-size: 1.1em;
+  position: relative;
+}
+.btn-animated {
+  animation-name: moveInDown;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-fill-mode: backwards;
+}
+.btn-blue {
+  background-color: #007bff;
+}
+
+.header-box .btn {
+  display: inline-block;
+  margin-top: 70px;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  background-color: #007bff;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 100px;
+  transition: all 0.4s;
+}
+
+.btn:hover::after {
+  transform: scaleX(1.6) scaleY(1.8);
+  opacity: 0;
+}
+
+@keyframes moveInLeft {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  80% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes moveInDown {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.scroll-down a {
+  position: absolute;
+  bottom: 11%;
+  left: 50%;
+  font-size: 1.6em;
+  transform: translateX(-50%);
+  text-align: center;
+  font-weight: 300;
+}
+
+.scroll-down * {
+  display: block;
+}
+.scroll-down a i {
+  animation: scrollDown 1.6s ease-out infinite backwards;
+}
+
+@keyframes scrollDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  80% {
+    opacity: 100;
+    transform: translateY(-2px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+}
